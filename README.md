@@ -1,5 +1,9 @@
 # ZMK Config
 
+## Keymap
+
+![keymap image](./images/my_keymap.svg)
+
 ## Flashing after keymap changes
 
 From [zmk-docs:cusomization](https://zmk.dev/docs/customization)
@@ -9,4 +13,6 @@ From [zmk-docs:cusomization](https://zmk.dev/docs/customization)
 > you are just updating your keymap. More troubleshooting information for split
 > keyboards can be found [here](https://zmk.dev/docs/troubleshooting/connection-issues#split-keyboard-parts-unable-to-pair).
 >
+
+
 
