@@ -123,22 +123,22 @@
             >;
         };
 
-        maths_layer {
+maths_layer {
             display-name = "maths";
 
             // ------------------------------------------------------------------------------------------------------------
-            // | BOOTLD |     |     |     |     |     |                |      |      |       |      |       | BOOTLD|
-            // |        |     |     |     |     |     |                |      |      |       |      |       |       |
-            // |        |  -  |  +  |  *  |  /  |  ?  |                |      |      |       |      |       |       |
-            // |        |     |     |     |     |     |      |  |      |  -   |  +   |   *   |  /   |   ?   |       |
-            //                |     |     |     |     |      |  |      |      |      |       |      |
+            // | BOOTLD |  &  |  ^  |  $  |  !  |  =  |                |  =  |  !  |   $   |  ^  |   &   | BOOTLD|
+            // |  TRANS |  &  |  ^  |  $  |  !  |  =  |                |  =  |  !  |   $   |  ^  |   &   | TRANS |
+            // |  TRANS |  -  |  +  |  *  |  /  |  ?  |                |  ?  |  /  |   *   |  +  |   -   | TRANS |
+            // |  TRANS |TRANS|TRANS|TRANS|TRANS|  #  | TRANS |  TRANS |  #  | NONE|  NONE | NONE|  NONE | TRANS |
+            //                |TRANS|TRANS|TRANS|TRANS| TRANS |  TRANS |TRANS|TRANS| TRANS |TRANS|
 
             bindings = <
-&bootloader  &trans     &trans    &trans    &trans     &trans                          &trans     &trans    &trans    &trans     &trans        &bootloader
-&trans       &trans     &trans    &trans    &trans     &trans                          &trans     &trans    &trans    &trans     &trans        &trans
-&trans       &kp MINUS  &kp PLUS  &kp STAR  &kp SLASH  &kp QUESTION                    &trans     &trans    &trans    &trans     &trans        &trans
-&trans       &trans     &trans    &trans    &trans     &trans        &trans    &trans  &kp MINUS  &kp PLUS  &kp STAR  &kp SLASH  &kp QUESTION  &trans
-                        &trans    &trans    &trans     &trans        &trans    &trans  &trans     &trans    &trans    &trans
+&bootloader  &trans         &trans     &trans      &trans           &trans                          &trans        &trans           &trans      &trans     &trans         &bootloader
+&trans       &kp AMPERSAND  &kp CARET  &kp DOLLAR  &kp EXCLAMATION  &kp EQUAL                       &kp EQUAL     &kp EXCLAMATION  &kp DOLLAR  &kp CARET  &kp AMPERSAND  &trans
+&trans       &kp MINUS      &kp PLUS   &kp STAR    &kp SLASH        &kp QUESTION                    &kp QUESTION  &kp SLASH        &kp STAR    &kp PLUS   &kp MINUS      &trans
+&trans       &trans         &trans     &trans      &trans           &kp HASH      &trans    &trans  &kp HASH      &none            &none       &none      &none          &trans
+                            &trans     &trans      &trans           &trans        &trans    &trans  &trans        &trans           &trans      &trans
             >;
         };
     };
