@@ -167,7 +167,7 @@
 		 * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┐┌──────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
 		 * │  NONE   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │    #    │ TRANS ││TRANS │    #    │  NONE   │  NONE   │  NONE   │  NONE   │  TRANS  │
 		 * └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼───────┤└──────┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-		 *                               │ BT_CLR  │BT_CLR_A │  TRANS  │ TRANS │ TRANS │ TRANS   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
+		 *                               │ BT_CLR  │BT_CLR_A │  TRANS  │ NONE  │ NONE │ TRANS   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
 		 *                               └─────────┴─────────┴─────────┴───────┴───────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 		 */
 
@@ -176,7 +176,7 @@
 		&trans       &kp AMPERSAND  &kp CARET   &kp DOLLAR      &kp EXCLAMATION  &kp EQUAL                       &kp EQUAL     &kp EXCLAMATION  &kp DOLLAR  &kp CARET  &kp AMPERSAND  &trans
 		&trans       &kp MINUS      &kp PLUS    &kp STAR        &kp SLASH        &kp QUESTION                    &kp QUESTION  &kp SLASH        &kp STAR    &kp PLUS   &kp MINUS      &trans
 		&none        &trans         &trans      &trans          &trans           &kp HASH      &trans    &trans  &kp HASH      &none            &none       &none      &none          &trans
-									&bt BT_CLR  &bt BT_CLR_ALL  &trans           &trans        &trans    &trans  &trans        &trans           &trans      &trans
+									&bt BT_CLR  &bt BT_CLR_ALL  &trans           &trans        &none     &none   &trans        &trans           &trans      &trans
 					>;
         };
 
@@ -193,7 +193,7 @@
              * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┐┌──────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
              * │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │ TRANS ││TRANS │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
              * └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼───────┤└──────┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-             *                               │  TRANS  │  TRANS  │  TRANS  │ TRANS │ TRANS │ TRANS   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
+             *                               │  TRANS  │  TRANS  │  TRANS  │ NONE  │ NONE  │ TRANS   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
              *                               └─────────┴─────────┴─────────┴───────┴───────┴─────────┴─────────┴─────────┴─────────┴─────────┘
              */
 
@@ -202,7 +202,7 @@
 &trans  &trans        &trans        &trans        &trans        &trans                    &trans        &trans  &trans  &trans  &trans  &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
 &trans  &trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans        &trans  &trans  &trans  &trans  &trans
-                      &trans        &trans        &trans        &trans  &trans    &trans  &trans        &trans  &trans  &trans
+                      &trans        &trans        &trans        &trans  &none     &none   &trans        &trans  &trans  &trans
             >;
         };
     };
