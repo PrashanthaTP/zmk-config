@@ -155,27 +155,27 @@
         maths_layer {
             display-name = "maths";
 
-            /*
-             * ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐               ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-             * │BOOTLOADR│  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │               │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │BOOTLOADR│
-             * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤               ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-             * │  TRANS  │    &    │    ^    │    $    │    !    │    =    │               │    =    │    !    │    $    │    ^    │    &    │  TRANS  │
-             * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤               ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-             * │  TRANS  │    -    │    +    │    *    │    /    │    ?    │               │    ?    │    /    │    *    │    +    │    -    │  TRANS  │
-             * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┐┌──────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-             * │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │    #    │ TRANS ││TRANS │    #    │  NONE   │  NONE   │  NONE   │  NONE   │  TRANS  │
-             * └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼───────┤└──────┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-             *                               │  TRANS  │  TRANS  │  TRANS  │ TRANS │ TRANS │ TRANS   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
-             *                               └─────────┴─────────┴─────────┴───────┴───────┴─────────┴─────────┴─────────┴─────────┴─────────┘
-             */
+		/*
+		 * ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐               ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
+		 * │BOOTLOADR│  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │               │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │BOOTLOADR│
+		 * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤               ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+		 * │  TRANS  │    &    │    ^    │    $    │    !    │    =    │               │    =    │    !    │    $    │    ^    │    &    │  TRANS  │
+		 * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤               ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+		 * │  TRANS  │    -    │    +    │    *    │    /    │    ?    │               │    ?    │    /    │    *    │    +    │    -    │  TRANS  │
+		 * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┐┌──────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+		 * │  NONE   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │    #    │ TRANS ││TRANS │    #    │  NONE   │  NONE   │  NONE   │  NONE   │  TRANS  │
+		 * └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼───────┤└──────┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+		 *                               │ BT_CLR  │BT_CLR_A │  TRANS  │ TRANS │ TRANS │ TRANS   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
+		 *                               └─────────┴─────────┴─────────┴───────┴───────┴─────────┴─────────┴─────────┴─────────┴─────────┘
+		 */
 
-            bindings = <
-&bootloader  &trans         &trans     &trans      &trans           &trans                          &trans        &trans           &trans      &trans     &trans         &bootloader
-&trans       &kp AMPERSAND  &kp CARET  &kp DOLLAR  &kp EXCLAMATION  &kp EQUAL                       &kp EQUAL     &kp EXCLAMATION  &kp DOLLAR  &kp CARET  &kp AMPERSAND  &trans
-&trans       &kp MINUS      &kp PLUS   &kp STAR    &kp SLASH        &kp QUESTION                    &kp QUESTION  &kp SLASH        &kp STAR    &kp PLUS   &kp MINUS      &trans
-&trans       &trans         &trans     &trans      &trans           &kp HASH      &trans    &trans  &kp HASH      &none            &none       &none      &none          &trans
-                            &trans     &trans      &trans           &trans        &trans    &trans  &trans        &trans           &trans      &trans
-            >;
+		bindings = <
+		&bootloader  &trans         &trans      &trans          &trans           &trans                          &trans        &trans           &trans      &trans     &trans         &bootloader
+		&trans       &kp AMPERSAND  &kp CARET   &kp DOLLAR      &kp EXCLAMATION  &kp EQUAL                       &kp EQUAL     &kp EXCLAMATION  &kp DOLLAR  &kp CARET  &kp AMPERSAND  &trans
+		&trans       &kp MINUS      &kp PLUS    &kp STAR        &kp SLASH        &kp QUESTION                    &kp QUESTION  &kp SLASH        &kp STAR    &kp PLUS   &kp MINUS      &trans
+		&none        &trans         &trans      &trans          &trans           &kp HASH      &trans    &trans  &kp HASH      &none            &none       &none      &none          &trans
+									&bt BT_CLR  &bt BT_CLR_ALL  &trans           &trans        &trans    &trans  &trans        &trans           &trans      &trans
+					>;
         };
 
         nums_layer {
