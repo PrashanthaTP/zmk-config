@@ -65,11 +65,9 @@
 &kp GRAVE         &kp N1  &kp N2        &kp N3    &kp N4     &kp N5                                        &kp N6     &kp N7     &kp N8     &kp N9         &kp N0    &kp BACKSPACE
 &kp TAB           &kp Q   &kp W         &kp E     &kp R      &kp T                                         &kp Y      &kp U      &kp I      &kp O          &kp P     &kp MINUS
 &kp LEFT_SHIFT    &kp A   &kp S         &kp D     &kp F      &kp G                                         &kp H      &kp J      &kp K      &kp L          &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X         &kp C     &kp V      &kp B      &kp C_MUTE         &none           &kp N      &kp M      &kp COMMA  &kp DOT        &kp FSLH  &kp RSHFT
+&kp LEFT_CONTROL  &kp Z   &kp X         &kp C     &kp V      &kp B      &none              &none           &kp N      &kp M      &kp COMMA  &kp DOT        &kp FSLH  &kp RSHFT
                           &kp LEFT_GUI  &kp LALT  &kp LCTRL  &mo LOWER  &lt MATHS SPACE    &lt NUMS ENTER  &mo RAISE  &kp RCTRL  &kp RALT   &kp RIGHT_GUI
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         lower_layer {
@@ -96,8 +94,6 @@
 &trans      &none        &none             &none              &none                 &none                  &trans    &trans  &kp SLASH       &kp BACKSLASH    &kp LESS_THAN  &kp GREATER_THAN  &none       &none
                          &trans            &trans             &trans                &trans                 &trans    &trans  &trans          &trans           &trans         &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         raise_layer {
@@ -124,8 +120,6 @@
 &trans      &kp HOME         &kp K_CUT     &kp K_COPY    &kp K_PASTE   &kp END       &trans    &trans  &trans       &trans     &trans         &trans     &trans  &kp PAGE_DOWN
                              &trans        &trans        &trans        &trans        &trans    &trans  &trans       &trans     &trans         &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
         adjust_layer {
@@ -157,7 +151,7 @@
         maths_layer {
             display-name = "maths";
 
-		/*
+            /*
 		 * ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐               ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
 		 * │BOOTLOADR│  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │               │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │BOOTLOADR│
 		 * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤               ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
@@ -171,38 +165,34 @@
 		 *                               └─────────┴─────────┴─────────┴───────┴───────┴─────────┴─────────┴─────────┴─────────┴─────────┘
 		 */
 
-		bindings = <
-		&bootloader  &trans         &trans      &trans          &trans           &trans                          &trans        &trans           &trans      &trans     &trans         &bootloader
-		&trans       &kp AMPERSAND  &kp CARET   &kp DOLLAR      &kp EXCLAMATION  &kp EQUAL                       &kp EQUAL     &kp EXCLAMATION  &kp DOLLAR  &kp CARET  &kp AMPERSAND  &trans
-		&trans       &kp MINUS      &kp PLUS    &kp STAR        &kp SLASH        &kp QUESTION                    &kp QUESTION  &kp SLASH        &kp STAR    &kp PLUS   &kp MINUS      &trans
-		&none        &trans         &trans      &trans          &trans           &kp HASH      &trans    &trans  &kp HASH      &none            &none       &none      &none          &trans
-									&bt BT_CLR  &bt BT_CLR_ALL  &trans           &trans        &none     &none   &trans        &trans           &trans      &trans
-					>;
+            bindings = <
+&bootloader  &trans         &trans      &trans          &trans           &trans                          &trans        &trans           &trans      &trans     &trans         &bootloader
+&trans       &kp AMPERSAND  &kp CARET   &kp DOLLAR      &kp EXCLAMATION  &kp EQUAL                       &kp EQUAL     &kp EXCLAMATION  &kp DOLLAR  &kp CARET  &kp AMPERSAND  &trans
+&trans       &kp MINUS      &kp PLUS    &kp STAR        &kp SLASH        &kp QUESTION                    &kp QUESTION  &kp SLASH        &kp STAR    &kp PLUS   &kp MINUS      &trans
+&none        &trans         &trans      &trans          &trans           &kp HASH      &trans    &trans  &kp HASH      &none            &none       &none      &none          &trans
+                            &bt BT_CLR  &bt BT_CLR_ALL  &trans           &trans        &none     &none   &trans        &trans           &trans      &trans
+            >;
         };
 
         nums_layer {
             display-name = "nums";
 
             /*
-             * ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐               ┌─────────┬─────────┬─────────┬─────────┬─────────┬─────────┐
-             * │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │               │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
-             * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤               ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-             * │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │               │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
-             * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤               ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-             * │  TRANS  │    1    │    2    │    3    │    4    │    5    │               │    6    │    7    │    8    │    9    │    0    │  TRANS  │
-             * ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┼───────┐┌──────┼─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-             * │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │ TRANS ││TRANS │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
-             * └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼───────┤└──────┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-             *                               │  TRANS  │  TRANS  │  TRANS  │ NONE  │ NONE  │ TRANS   │  TRANS  │  TRANS  │  TRANS  │  TRANS  │
-             *                               └─────────┴─────────┴─────────┴───────┴───────┴─────────┴─────────┴─────────┴─────────┴─────────┘
-             */
+			 * --------------------------------------------------------------------------------------------------------------------
+			 * | EXT_OFF | EXT_ON | TRANS  | TRANS  | TRANS  | TRANS  |                    | TRANS  | TRANS | TRANS | TRANS | TRANS |
+			 * | TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                    | TRANS  | TRANS | TRANS | TRANS | TRANS |
+			 * | TRANS   |   1    |   2    |   3    |   4    |   5    |                    |   6    |   7   |   8   |   9   |   0   |
+			 * | TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |  TRANS  |  | TRANS | TRANS  | TRANS | TRANS | TRANS | TRANS |
+			 *                    | TRANS  | TRANS  | TRANS  | TRANS  |  NONE   |  | NONE  | TRANS  | TRANS | TRANS | TRANS |
+			 * --------------------------------------------------------------------------------------------------------------------
+			 */
 
             bindings = <
-&trans  &trans        &trans        &trans        &trans        &trans                    &trans        &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans                    &trans        &trans  &trans  &trans  &trans  &trans
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
-&trans  &trans        &trans        &trans        &trans        &trans  &trans    &trans  &trans        &trans  &trans  &trans  &trans  &trans
-                      &trans        &trans        &trans        &trans  &none     &none   &trans        &trans  &trans  &trans
+&ext_power EP_OFF  &ext_power EP_ON  &trans        &trans        &trans        &trans                    &trans        &trans  &trans  &trans  &trans  &trans
+&trans             &trans            &trans        &trans        &trans        &trans                    &trans        &trans  &trans  &trans  &trans  &trans
+&trans             &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
+&trans             &trans            &trans        &trans        &trans        &trans  &trans    &trans  &trans        &trans  &trans  &trans  &trans  &trans
+                                     &trans        &trans        &trans        &trans  &none     &none   &trans        &trans  &trans  &trans
             >;
         };
     };
