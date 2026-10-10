@@ -15,4 +15,6 @@ From [zmk-docs:cusomization](https://zmk.dev/docs/customization)
 >
 
 
+**Note**: While flashing both sides, flash right side first. Because left side is
+the Central board. The right side comunicates with Laptop via Central.
 
