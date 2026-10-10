@@ -178,17 +178,17 @@
             display-name = "nums";
 
             /*
-			 * --------------------------------------------------------------------------------------------------------------------
-			 * | EXT_OFF | EXT_ON | TRANS  | TRANS  | TRANS  | TRANS  |                    | TRANS  | TRANS | TRANS | TRANS | TRANS |
-			 * | TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                    | TRANS  | TRANS | TRANS | TRANS | TRANS |
-			 * | TRANS   |   1    |   2    |   3    |   4    |   5    |                    |   6    |   7   |   8   |   9   |   0   |
-			 * | TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |  TRANS  |  | TRANS | TRANS  | TRANS | TRANS | TRANS | TRANS |
-			 *                    | TRANS  | TRANS  | TRANS  | TRANS  |  NONE   |  | NONE  | TRANS  | TRANS | TRANS | TRANS |
-			 * --------------------------------------------------------------------------------------------------------------------
-			 */
+ * --------------------------------------------------------------------------------------------------------------------
+ * | EXT_OFF | EXT_ON | TRANS  | TRANS  | TRANS  | SOFTOFF|                    | TRANS  | TRANS | TRANS | TRANS | TRANS |
+ * | TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |                    | TRANS  | TRANS | TRANS | TRANS | TRANS |
+ * | TRANS   |   1    |   2    |   3    |   4    |   5    |                    |   6    |   7   |   8   |   9   |   0   |
+ * | TRANS   | TRANS  | TRANS  | TRANS  | TRANS  | TRANS  |  TRANS  |  | TRANS | TRANS  | TRANS | TRANS | TRANS | TRANS |
+ *                    | TRANS  | TRANS  | TRANS  | TRANS  |  NONE   |  | NONE  | TRANS  | TRANS | TRANS | TRANS |
+ * --------------------------------------------------------------------------------------------------------------------
+ */
 
             bindings = <
-&ext_power EP_OFF  &ext_power EP_ON  &trans        &trans        &trans        &trans                    &trans        &trans  &trans  &trans  &trans  &trans
+&ext_power EP_OFF  &ext_power EP_ON  &trans        &trans        &trans        &soft_off                 &trans        &trans  &trans  &trans  &trans  &trans
 &trans             &trans            &trans        &trans        &trans        &trans                    &trans        &trans  &trans  &trans  &trans  &trans
 &trans             &kp NUMBER_1      &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                    &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
 &trans             &trans            &trans        &trans        &trans        &trans  &trans    &trans  &trans        &trans  &trans  &trans  &trans  &trans
